@@ -47,7 +47,7 @@ class KelasController extends Controller
         $kelas->jurusan = $request->jurusan;
         $kelas->wali_kelas = $request->wali_kelas;
         $kelas->save();
-        Alert::success('Tambah Data','Berhasil')->autoclose(1500);
+        // Alert::success('Tambah Data','Berhasil')->autoclose(1500);
         return redirect('kelas');
     }
 
@@ -68,7 +68,7 @@ class KelasController extends Controller
      * @param  \App\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(kelas $kelas)
+    public function edit($id)
     {
         $kelas = Kelas::findOrFail($id);
         return view('kelas.edit',compact('kelas'));
@@ -81,7 +81,7 @@ class KelasController extends Controller
      * @param  \App\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, kelas $kelas)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
             'kelas' => 'required',
@@ -93,7 +93,7 @@ class KelasController extends Controller
         $kelas->jurusan = $request->jurusan;
         $kelas->wali_kelas = $request->wali_kelas;
         $kelas->save();
-        Alert::success('Tambah Data','Berhasil')->autoclose(1500);
+        // Alert::success('Tambah Data','Berhasil')->autoclose(1500);
         return redirect()->route('kelas.index');
     }
 
@@ -103,9 +103,10 @@ class KelasController extends Controller
      * @param  \App\kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kelas $kelas)
+    public function destroy($id)
     {
         $kelas = Kelas::findOrFail($id);
         $kelas->delete();
+        return redirect()->route('kelas.index');
     }
 }

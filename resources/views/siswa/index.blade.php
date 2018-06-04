@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-<div class="container-fluid">
 	<div class="row">
 	<div class="container-fluid">
 	<div class="row">
@@ -10,9 +9,9 @@
 			<!--end nav-->
 	</div>
 	<div class="col-md-10">
-			<div class="panel panel-primary">
+			<div class="panel panel-danger">
 			  <div class="panel-heading">Data Siswa
-			  	<div class="panel-title pull-right"><a href="{{ route('kelas.create') }}">Tambah</a>
+			  	<div class="panel-title pull-right"><a href="{{ route('siswa.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 			  <div class="panel-body">

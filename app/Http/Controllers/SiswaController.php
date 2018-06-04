@@ -71,7 +71,7 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function edit(siswa $siswa)
+    public function edit($id)
     {
         $siswa = Siswa::findOrFail($id);
         return view('siswa.edit',compact('siswa'));
@@ -84,7 +84,7 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, siswa $siswa)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
             'nama' => 'required',
@@ -108,8 +108,10 @@ class SiswaController extends Controller
      * @param  \App\siswa  $siswa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(siswa $siswa)
+    public function destroy($id)
     {
-        //
+        $siswa = Siswa::findOrFail($id);
+        $siswa->delete();
+        return redirect()->route('siswa.index');
     }
 }

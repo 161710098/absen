@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="row">
 	<div class="container">
@@ -9,12 +9,12 @@
 			  	</div>
 			  </div>
 			  <div class="panel-body">
-			  	<form action="{{ route('kelas.update',$k->id) }}" method="post" >
+			  	<form action="{{ route('kelas.update',$kelas->id) }}" method="post" >
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('kelas') ? ' has-error' : '' }}">
 			  			<label class="control-label">Kelas</label>	
-			  			<input type="text" name="kelas" value="{{ $k->kelas }}" class="form-control"  required>
+			  			<input type="text" name="kelas" value="{{ $kelas->kelas }}" class="form-control"  required>
 			  			@if ($errors->has('kelas'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('kelas') }}</strong>
@@ -24,7 +24,7 @@
 
 			  		<div class="form-group {{ $errors->has('jurusan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Jurusan</label>	
-			  			<input type="text" name="jurusan" value="{{ $k->jurusan }}" class="form-control"  required>
+			  			<input type="text" name="jurusan" value="{{ $kelas->jurusan }}" class="form-control"  required>
 			  			@if ($errors->has('jurusan'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('jurusan') }}</strong>
@@ -34,7 +34,7 @@
 
 			  		<div class="form-group {{ $errors->has('wali_kelas') ? ' has-error' : '' }}">
 			  			<label class="control-label">Wali Kelas</label>	
-			  			<input type="text" name="wali_kelas" value="{{ $k->wali_kelas }}" class="form-control"  required>
+			  			<input type="text" name="wali_kelas" value="{{ $kelas->wali_kelas }}" class="form-control"  required>
 			  			@if ($errors->has('wali_kelas'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('wali_kelas') }}</strong>

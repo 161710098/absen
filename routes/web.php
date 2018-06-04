@@ -17,6 +17,10 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('kelas','KelasController');
+Route::resource('siswa','SiswaController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('cek', function () {
+    return view('layouts.admin');
+});

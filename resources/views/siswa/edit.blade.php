@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="row">
 	<div class="container">
@@ -43,7 +43,7 @@
 			  		</div>
                       <div class="form-group {{ $errors->has('id_kelas') ? ' has-error' : '' }}">
 			  			<label class="control-label">id_kelas</label>	
-			  			<input type="text" name="id_kelas" value="{{ $k->id_kelas }}" class="form-control"  required>
+			  			<input type="text" name="id_kelas" value="{{ $siswa->id_kelas }}" class="form-control"  required>
 			  			@if ($errors->has('id_kelas'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('id_kelas') }}</strong>

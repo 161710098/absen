@@ -1,14 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <div class="container-fluid">
+
 	<div class="row">
-	<div class="container-fluid">
-	<div class="row">
-	<div class="col-md-2">
-	<!--nav-->
-				
-			<!--end nav-->
-	</div>
+	
 	<div class="col-md-10">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Kelas
